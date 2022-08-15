@@ -1,25 +1,67 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-body{
+
+body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+
 }
-.container{
+
+.container {
+    /* Used to position the stacked cards */
+    position: relative;
+    width: 80%;
+    height: 90%;
+    margin: 80px 50px;
+
+}
+
+.container__card {
+    /* Absolute position */
+    left: 0px;
+    position: absolute;
+    top: 0px;
+
+    /* Take full size */
+    height: 100%;
+    width: 100%;
+
+    /* Displayed under the container */
+    z-index: -1;
+
+    /* Background and border colors */
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+
+    /* Rotate it. Change the number of degrees for the following cards */
+    /* transform: rotate(5deg); */
+}
+
+/* .container {
     width: 800px;
     height: 500px;
-    margin:  40px 50px;
+    margin: 40px 50px;
     padding: 50px 30px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    /* border: .2px solid #eee; */
     box-shadow: 5px 9px 20px 4px #eee;
+} */
+.card {
+    padding: 80px 30px;
+
 }
-.choice{
+
+
+.choice {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -27,35 +69,42 @@ body{
     color: rgb(105, 105, 105);
     font-size: 30px;
 }
-.choice-value{
+
+.choice-value {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
 }
-.choice h3{
+
+.choice h3 {
     margin-bottom: 50px;
     color: rgb(7, 173, 173);
 }
-.choice p span{
+
+.choice p span {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(162, 91, 4);
     font-size: 30px;
     font-weight: bold;
     text-transform: uppercase;
 }
-.btn-container{
-    margin-top: 50px;
+
+.btn-container {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-.btn-container button{
+
+.btn-container button {
     text-transform: uppercase;
     font-size: 24px;
     color: rgb(162, 91, 4);
     cursor: pointer;
-    margin: 20px;
     width: 150px;
-    padding: 20px 30px;
+    padding: 20px;
     background-color: #fff;
     box-shadow: 5px 9px 20px 4px #eee;
     border: none;
@@ -70,8 +119,9 @@ body{
     -ms-transition: all .8s ease;
     -o-transition: all .8s ease;
 }
-.btn-container button:hover{
-    background-color:  rgb(162, 91, 4);
+
+.btn-container button:hover {
+    background-color: rgb(162, 91, 4);
     border: 1px solid #fff;
     color: #fff;
 }
