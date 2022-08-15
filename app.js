@@ -3,16 +3,37 @@ const userChoiceDisplay = document.getElementById("user-choice");
 const resultDisplay = document.getElementById("result");
 const possibleChoices = document.querySelectorAll("button");
 const containerCards = document.querySelectorAll(".container__card");
+const cardDisplay = document.querySelector(".card");
 
 let computerChoice;
 let userChoice;
 let result;
 
-for (let i = 0; i < containerCards.length; i++) {
-  containerCards[
-    containerCards.length - i - 1
-  ].style = `transform: rotate(calc(${i} * 5deg))`;
-}
+/* cardDisplay.onmouseover = function () {
+  for (let i = 0; i < containerCards.length; i++) {
+    containerCards[
+      containerCards.length - i - 1
+    ].style = `transform: rotate(calc(${i} * 260deg))`;
+  }
+}; */
+cardDisplay.onmouseover = function () {
+  for (let i = 0; i < containerCards.length; i++) {
+    containerCards[
+      containerCards.length - i - 1
+    ].style = `-webkit-animation: rotating ${(i + 1) * 5}s linear infinite;
+    -moz-animation: rotating ${(i + 1) * 5}s linear infinite;
+    -ms-animation: rotating ${(i + 1) * 5}s linear infinite;
+    -o-animation: rotating ${(i + 1) * 5}s linear infinite;
+    animation: rotating ${(i + 1) * 5}s linear infinite;`;
+  }
+};
+cardDisplay.addEventListener("mouseout", function () {
+  for (let i = 0; i < containerCards.length; i++) {
+    containerCards[
+      containerCards.length - i - 1
+    ].style = `transform: rotate(0deg)`;
+  }
+});
 
 possibleChoices.forEach((possibleChoice) =>
   possibleChoice.addEventListener("click", (e) => {

@@ -8,7 +8,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 80%;
+    width: 50%;
     height: 100vh;
     margin: 0 auto;
 
@@ -39,24 +39,52 @@ body {
     /* Background and border colors */
     background-color: rgb(255, 255, 255);
     border: 1px solid rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
+    border-radius: 30%;
 
     /* Rotate it. Change the number of degrees for the following cards */
     /* transform: rotate(5deg); */
+
+    transition: all 1s ease;
+
 }
 
-/* .container {
-    width: 800px;
-    height: 500px;
-    margin: 40px 50px;
-    padding: 50px 30px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    box-shadow: 5px 9px 20px 4px #eee;
-} */
+@-webkit-keyframes rotating
+
+/* Safari and Chrome */
+    {
+    from {
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
 .card {
-    padding: 80px 30px;
+    padding: 90px 40px;
 
 }
 
@@ -67,7 +95,7 @@ body {
     flex-direction: column;
     width: 100%;
     color: rgb(105, 105, 105);
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .choice-value {
@@ -86,7 +114,7 @@ body {
 .choice p span {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(162, 91, 4);
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -100,7 +128,7 @@ body {
 
 .btn-container button {
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: 20px;
     color: rgb(162, 91, 4);
     cursor: pointer;
     width: 150px;
